@@ -13,7 +13,7 @@ jobs:
   steps:
   - script: |
       [[ -e "README.md"]] && echo "##vso[task.setvariable variable=isDocCommit]false || true"
-    displayName: 'Check commit\'s type'
+    displayName: 'Check commit type'
     
   - script: echo Hello, world!
     condition: ne(variables['isDocCommit'], 'true')
