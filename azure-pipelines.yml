@@ -14,6 +14,7 @@ jobs:
     displayName: 'Check commit type'
     
   - script: echo Hello, world! && echo $IS_DOC_COMMIT
+    condition: succeeded()
     displayName: 'Run a one-line script'
 
   - script: |
