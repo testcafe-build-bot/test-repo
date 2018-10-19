@@ -16,6 +16,6 @@ steps:
 # Print the variable
 - script: |
     echo my variable is $(isDocCommit)
-- displayName: 'Test me'
-  script: echo ok
+- script: echo ok
+  displayName: 'Test me'
   condition: not(variables['isDocCommit'])
