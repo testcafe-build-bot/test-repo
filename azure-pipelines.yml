@@ -10,16 +10,16 @@ jobs:
 
   steps:
   - script: |
-      [[ -e "README.mdd" ]] && echo "##vso[task.setvariable variable=IS_DOC_COMMIT]false" || true
+      [[ -e "README.mdd" ]]
     displayName: 'Check commit type'
     
   - script: echo Hello, world! && echo $IS_DOC_COMMIT
-    condition: ne(variables['IS_DOC_COMMIT'], 'true')
+    condition: succeeded()
     displayName: 'Run a one-line script'
 
   - script: |
       echo $IS_DOC_COMMIT
       echo Add other tasks to build, test, and deploy your project.
       echo $BUILD_SOURCEVERSIONMESSAGE
-    condition: eq(variables['IS_DOC_COMMIT'], 'true')
+    condition: failed()
     displayName: 'Run a multi-line script'
