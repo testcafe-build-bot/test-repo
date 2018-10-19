@@ -10,7 +10,7 @@ jobs:
 
   steps:
   - script: echo Hello, world!
-    condition: startsWith(variables['Build.SourceVersionMessage'], '[docs]')
+    condition: not(startsWith(variables['Build.SourceVersionMessage'], '[docs]'))
     displayName: 'Run a one-line script'
 
   - script: |
