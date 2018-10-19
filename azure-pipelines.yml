@@ -10,7 +10,7 @@ steps:
 
 # Create a variable
 - script: |
-    if [[ -e "README.mdd" ]]; then
+    if [[ -e "README.md" ]]; then
       echo '##vso[task.setvariable variable=myVariable]abc123'
     fi
 # Print the variable
