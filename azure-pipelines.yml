@@ -12,5 +12,5 @@ steps:
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
-    echo $BUILD_REQUESTEDFOR $BUILD_QUEUEDBY
+    echo $BUILD_SOURCEVERSIONMESSAGE
   displayName: 'Run a multi-line script'
