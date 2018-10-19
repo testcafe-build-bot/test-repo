@@ -3,15 +3,17 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-jobs:
-- job: Test
-  pool:
-    vmImage: 'Ubuntu 16.04'
+pool:
+  vmImage: 'ubuntu-16.04'
 
-  steps:
-  - script: |
-      # check it
-      if [[ -e "README.md" ]]; then 
-        echo "##vso[task.complete result=Skipped]DONE" && exit 0
-      fi
-    displayName: 'Check commit type'
+steps:
+
+# Create a variable
+- script: |
+    echo '##vso[task.setvariable variable=myVariable]abc123'
+
+# Print the variable
+- script: |
+    echo my variable is $(myVariable)
+- script: echo ok
+  condition: eq(variables['myVariable'], 'fffff')
