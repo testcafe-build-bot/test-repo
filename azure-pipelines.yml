@@ -5,7 +5,6 @@
 
 jobs:
 - job: Test
-  condition: eq(dependencies.A.outputs['printvar.isDocCommit'], 'true')
   pool:
     vmImage: 'Ubuntu 16.04'
 
