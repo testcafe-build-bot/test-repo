@@ -11,10 +11,10 @@ steps:
 # Create a variable
 - script: |
     if [[ -e "README.md" ]]; then
-      echo '##vso[task.setvariable variable=myVariable]abc123'
+      echo '##vso[task.setvariable variable=isDocCommit]abc123'
     fi
 # Print the variable
 - script: |
-    echo my variable is $(myVariable)
+    echo my variable is $(isDocCommit)
 - script: echo ok
-  condition: eq(variables['myVariable'], 'fffff')
+  condition: eq(variables['isDocCommit'], 'fffff')
