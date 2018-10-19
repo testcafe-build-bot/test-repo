@@ -10,7 +10,7 @@ jobs:
 
   steps:
   - script: |
-      [[ -e "README.mdd" ]] || echo "##vso[task.complete result=Succeeded]DONE"
+      [[ -e "README.mdd" ]] || echo "##vso[task.complete result=Skipped]DONE"
     displayName: 'Check commit type'
     
   - script: echo Hello, world! && echo $IS_DOC_COMMIT
