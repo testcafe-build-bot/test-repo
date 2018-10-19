@@ -12,7 +12,7 @@ jobs:
     
 - job: Test
   condition: eq(dependencies.A.outputs['printvar.isDocCommit'], 'true')
-  dependsOn: 'Check commit's type'
+  dependsOn: 'Check commit type'
   pool:
     vmImage: 'Ubuntu 16.04'
 
