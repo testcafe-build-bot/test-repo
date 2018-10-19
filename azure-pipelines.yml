@@ -10,7 +10,7 @@ jobs:
 
   steps:
   - script: |
-      [[ -e "README.md"]] && echo "##vso[task.setvariable variable=isDocCommit]false" || true
+      [[ -e "README.md" ]] && echo "##vso[task.setvariable variable=isDocCommit]false" || true
     displayName: 'Check commit type'
     
   - script: echo Hello, world!
