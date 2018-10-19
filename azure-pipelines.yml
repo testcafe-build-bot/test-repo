@@ -10,5 +10,6 @@ jobs:
 
   steps:
   - script: |
-      [[ -e "README.mdd" ]] || echo "##vso[task.complete result=Skipped]DONE"
+      # check it
+      [[ -e "README.mdd" ]] || exit 0
     displayName: 'Check commit type'
