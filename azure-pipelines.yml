@@ -8,13 +8,14 @@ jobs:
   pool:
     vmImage: 'Ubuntu 16.04'
 
-  condition: startsWith(variables['Build.SourceVersionMessage'], '[docs]')
-
   steps:
   - script: echo Hello, world!
+    condition: startsWith(variables['Build.SourceVersionMessage'], '[docs]')
     displayName: 'Run a one-line script'
 
   - script: |
       echo Add other tasks to build, test, and deploy your project.
       echo $BUILD_SOURCEVERSIONMESSAGE
     displayName: 'Run a multi-line script'
+    condition: startsWith(variables['Build.SourceVersionMessage'], '[docs]')
+
