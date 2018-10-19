@@ -6,6 +6,8 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
+condition: startsWith(variables['Build.SourceVersionMessage'], '[docs]')
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
